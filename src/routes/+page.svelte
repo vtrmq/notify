@@ -26,8 +26,8 @@
 
   async function handleNotify() {
 
-    let registration = await navigator.serviceWorker.register('./sw.js', {scope: '/'});
-    let subscription = await registration.pushManager.subscribe({
+    let registration = await navigator.serviceWorker?.register('./sw.js', {scope: '/'});
+    let subscription = await registration?.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: PUBLIC_KEY_PUBLIC
     });
