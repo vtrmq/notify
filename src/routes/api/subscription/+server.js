@@ -3,9 +3,11 @@ import { webpush } from "src/js/webpush";
 
 export async function POST({ request, cookies }) {
 	const { subscription } = await request.json();
-  console.log("=====================")
-  console.log(webpush)
-  console.log("=====================")
-  console.log(subscription)
+  const pushSubscription = subscription;
+  const payLoad = JSON.stringify({
+    title: "My custom notification",
+    message: "Hello Riohacha"
+  });
+  await webpush.sendNotification(pushSubscription, payLoad);
 	return json({ subscription });
 }

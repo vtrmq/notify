@@ -27,20 +27,11 @@
   async function handleNotify() {
 
     let registration = await navigator.serviceWorker.register('./sw.js', {scope: '/'});
-    console.log("===>>", registration)
     let subscription = await registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: PUBLIC_KEY_PUBLIC
     });
-    console.log(subscription)
-    /*
-    let registration = await navigator.serviceWorker.register('./sw.js',{scope: '/'});
-    console.log("===>>", registration)
-    registration.pushManager.subscribe({
-      userVisibleOnly: true,
-      applicationServerKey: PUBLIC_KEY_PUBLIC
-    });
-    */
+
     const response = await fetch('/api/subscription', {
       method: 'POST',
       body: JSON.stringify({ subscription }),
