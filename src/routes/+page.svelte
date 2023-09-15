@@ -28,6 +28,11 @@
 
     let registration = await navigator.serviceWorker.register('./sw.js', {scope: '/'});
     console.log("===>>", registration)
+    let subscrition = registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: PUBLIC_KEY_PUBLIC
+    });
+    console.log(subscription)
     /*
     let registration = await navigator.serviceWorker.register('./sw.js',{scope: '/'});
     console.log("===>>", registration)
