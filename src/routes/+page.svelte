@@ -43,11 +43,13 @@
     */
     const response = await fetch('/api/subscription', {
       method: 'POST',
-      body: JSON.stringify({ "value": 132456 }),
+      body: JSON.stringify({ subscription }),
       headers: {
         'Content-Type': 'application/json'
       }
     });
+    const rs = await response.json();
+    console.log(rs)
   }
 
 </script>
