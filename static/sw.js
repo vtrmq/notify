@@ -1,10 +1,13 @@
 console.log("Service worker")
 
 self.addEventListener("push", (e) => {
-  //console.log("Push:", event);
   const data = e.data.json();
   console.log(data)
   console.log("Notificación recibida");
+  self.registration.showNotification( data.title, {
+    body: data.message,
+    icon: "https://linuxiac.b-cdn.net/wp-content/uploads/2020/06/archlinux.jpg"
+  });
 });
 
 /*
