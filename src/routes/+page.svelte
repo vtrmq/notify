@@ -40,8 +40,8 @@
         'Content-Type': 'application/json'
       }
     });
-    const rs = await respose.json();
-    console.log(rs)
+    //const rs = await respose.json();
+    //console.log(rs)
   }
 
 </script>

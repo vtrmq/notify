@@ -3,6 +3,6 @@ import { webpush } from "src/js/webpush";
 
 export async function POST({ request, cookies }) {
 	const { subscription } = await request.json();
-  console.log(subscription)
-	return json({ subscription });
+  console.log(value)
+	return json({});
 }
