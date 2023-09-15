@@ -1,7 +1,7 @@
 {
-  "name":"Goby",
-  "short_name":"Goby",
-  "description": "Reserva de puesto transporte universidad",
+  "name":"Notify",
+  "short_name":"Notyfy",
+  "description": "Notifications push",
   "start_url":"./",
   "display":"standalone",
   "theme_color": "#ffffff",
