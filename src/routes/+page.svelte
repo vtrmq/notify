@@ -1,6 +1,7 @@
 <script>
   //import { browser } from "$app/environment";
   //import "src/js/webpush";
+  import { PUBLIC_KEY_PUBLIC } from '$env/static/public';
   import "src/css/styles.css";
 
 
@@ -26,15 +27,21 @@
   async function handleNotify() {
 
     const registration = await navigator.serviceWorker.register('/sw.js',{scope: '/'});
-    console.log("===>>", registration)
+    const subscription = await registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: PUBLIC_KEY_PUBLIC
+    });
+    console.log("===>>", subscription)
 
     const response = await fetch('/api/subscription', {
       method: 'POST',
-      body: JSON.stringify({ "value": 132456 }),
+      body: JSON.stringify({ subscription }),
       headers: {
         'Content-Type': 'application/json'
       }
     });
+    const rs = await respose.json();
+    console.log(rs)
   }
 
 </script>
