@@ -1,0 +1,23 @@
+{
+  "name":"Goby",
+  "short_name":"Goby",
+  "description": "Reserva de puesto transporte universidad",
+  "start_url":"./",
+  "display":"standalone",
+  "theme_color": "#ffffff",
+  "background_color":"#ffffff",
+  "lang":"es",
+  "scope":"./",
+  "icons": [
+    {
+      "src": "./icons/192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
